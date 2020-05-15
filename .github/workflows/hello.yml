@@ -1,0 +1,14 @@
+name : release
+on: 
+  push:
+    branch: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+  steps:
+    - name: Chack the contents of the file
+      uses: actions/checkout@v1
+      with:
+        ref: 'master'
