@@ -1,5 +1,5 @@
-name : release
-on: 
+name: release
+on:
   push:
     branches: [ master ]
 
@@ -7,11 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-18.04
 
-  steps:
-    - name: Check the contents of the file
-      uses: actions/checkout@v1
-      with:
-        ref: 'master'
+    steps:
+      - name: Check the contents of the file
+        uses: actions/checkout@v1
+        with:
+          ref: 'master'
 
     - name: Configration on Ubuntu 18.04
       uses: actions/
