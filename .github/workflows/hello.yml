@@ -25,4 +25,11 @@ jobs:
           echo "${{ secrets.ACTIONS_DEPLOY_KEY}}" > ~/.ssh/id_rsa
           chmod 400 ~/.ssh/id_rsa
 
+      - name: Build
+        run: |
+          yarn install
+          yarn generate
+
+          
+
     
