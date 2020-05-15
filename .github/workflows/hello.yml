@@ -19,7 +19,7 @@ jobs:
           node-version: '10.x'
 
       - name: Deploy configration
-        run: 
+        run: |
           mkdir ~/.ssh
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
           echo "${{ secrets.ACTIONS_DEPLOY_KEY}}" > ~/.ssh/id_rsa
