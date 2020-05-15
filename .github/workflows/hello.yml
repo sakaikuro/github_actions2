@@ -1,7 +1,7 @@
 name: release
 on:
   push:
-    branches: [ master ]
+    branches: [ deploy ]
 
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
       - name: Check the contents of the file
         uses: actions/checkout@v1
         with:
-          ref: 'master'
+          ref: 'deploy'
 
       - name: Configration on Ubuntu 18.04
         uses: actions/setup-node@v1
@@ -39,6 +39,7 @@ jobs:
           git config --local user.email ${GITHUB_EMAIL}"          
           git remote set-url origin git@github.com:sakaikuro/github_actions2.git
           git add -f docs
+          git add .
           git commit -m "auto rebuiding site"
           git push -f origin HEAD:master
     
