@@ -30,6 +30,15 @@ jobs:
           yarn install
           yarn generate
 
-          
-
+      - name: Push to GitHub
+        env:
+          GITHUB_USER: "sakaikuro"
+          GITHUB_EMAIL: "kurotsrrkk0513@yahoo.co.jp"
+        run: |
+          git config --local user.name ${GITHUB_USER}"
+          git config --local user.email ${GITHUB_EMAIL}"          
+          git remote set-url origin git@github.com:sakaikuro/github_actions2.git
+          git add -f docs
+          git commit -m "auto rebuiding site"
+          git push -f origin HEAD:master
     
